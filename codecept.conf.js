@@ -1,4 +1,7 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
+const {
+  setHeadlessWhen,
+  setCommonPlugins
+} = require('@codeceptjs/configure');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -17,7 +20,9 @@ exports.config = {
     JSONResponse: {}
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    validation_api: "./resource/api/responseValidation.js",
+    jsonSchema: "./resource/api/jsonSchema.js"
   },
   name: 'api-codeceptjs'
 }
