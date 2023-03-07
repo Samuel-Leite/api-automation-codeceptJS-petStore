@@ -100,8 +100,9 @@ Scenario('Exclusão do cadastro do Pet', async ({ I }) => {
     validation_api.validationStatus(200);
     validation_api.dontSeeCode(500);
     validation_api.validateTimeout(1000);
-    validation_api.responseCallBackDELETE();
     jsonSchema.complexJsonStructuresDELETE();
+    jsonSchema.containsKeysDELETE();
+    validation_api.responseCallBackDELETE();
     
     I.seeResponseContainsJson({
         code: 200,

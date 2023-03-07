@@ -35,5 +35,11 @@ module.exports = {
   I.seeResponseContainsKeys(['photoUrls']);
   I.seeResponseContainsKeys(['tags']);
   I.seeResponseContainsKeys(['status']);
+ },
+
+ containsKeysDELETE(){
+  I.seeResponseContainsKeys(['code']);
+  I.seeResponseContainsKeys(['type']);
+  I.seeResponseContainsKeys(['message']);
  }
 }
