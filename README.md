@@ -1,4 +1,33 @@
-# Projeto de automação de testes com codeceptjs e appium
+# Projeto de automação de testes com CodeceptJS e Rest API
+
+# Pré-Requisitos:
+Java 11 JDK
+VS Code
+
+## Estrutura do Projeto
+./output
+Evidências da execução dos testes
+
+./resource/api/jsonSchema.js
+Responsável por fazer as validações da estrutura do response da API
+
+./resource/api/responseValidation.js
+Responsável por fazer as validações de forma genérica do response da API
+
+./test/pet_store_test.js
+Consta os cenários de testes para execução
+
+./Utils/name.js
+Responsável por gerar nomes randômicos durante a execução dos testes da API
+
+./Utils/number.js
+Responsável por gerar números randômicos durante a execução dos testes da API
+
+
+# Observações:
+Faça o donwload do template no repositório de código para utilizar no seu projeto em especifico, feito isso, fique a vontande para usufruir dos recursos disponíveis e também customizar de acordo com sua necessidade.
+
+# Comandos utilizados durante a construção da automação de API com CodeceptJS
 
 ## Inicialização do projeto:
 npm init
@@ -15,8 +44,3 @@ npx codeceptjs run
 ## Configuração de informações randômicas via NPM
 npm install node-random-name
 npm install random-number
-
-## Referenciar o formato dos campos ao mapear
-. -> class
-# - > id
-~ -> acessibility id
