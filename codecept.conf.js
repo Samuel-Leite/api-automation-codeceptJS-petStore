@@ -21,7 +21,7 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    validation_api: "./resource/api/responseValidation.js",
+    responseValidation: "./resource/api/responseValidation.js",
     jsonSchema: "./resource/api/jsonSchema.js"
   },
   name: 'api-codeceptjs'

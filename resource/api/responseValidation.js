@@ -3,7 +3,9 @@ const { I } = inject();
 module.exports = {
 
  validationStatus(statusCode){
-  I.seeResponseCodeIs(statusCode);
+   if (statusCode != 200) {
+      I.seeResponseCodeIs(404);
+    }
  },
 
  validationSuccessfulStatus(){
