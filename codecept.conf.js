@@ -16,10 +16,10 @@ exports.config = {
   timeout: null,
   teardown: null,
   hooks: [],
-  // gherkin: {
-  //   features: './features/petStore.feature',
-  //   steps: ['./step_definitions/petStore_steps.js']
-  // },
+  gherkin: {
+    features: './features/petStore.feature',
+    steps: ['./step_definitions/petStore_steps.js']
+  },
   plugins: {
     screenshotOnFail: {
       enabled: true
@@ -48,6 +48,6 @@ exports.config = {
       timeout: 0
     }
   ],
-  tests: './test/*_test.js',
+  // tests: './test/*_test.js',
   name: 'api-codeceptjs'
 }
