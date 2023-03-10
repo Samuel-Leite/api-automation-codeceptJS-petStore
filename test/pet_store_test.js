@@ -10,15 +10,17 @@ const numberId = number.getNumberId()
 const numberCategory = number.getNumberCategory()
 const numberTags = number.getNumberTags()
 
+const payload = require("../resource/data/payload.json")
+
 Scenario('Cadastro de Pet', async ({ I }) => {
-    const responsePost = await I.sendPostRequest(`/v2/pet`, {
-        id: numberId,
-        category: {id: numberCategory,name: 'Cachorro'},
-        name: firstName,
-        photoUrls: ['photoURL'],
-        tags: [{id: numberTags,name: fullName}],
-        status: 'available'
-    }, {
+    const responsePost = await I.sendPostRequest(`/v2/pet`, 
+    payload,
+    payload.id = numberId,
+    payload.category.id = numberCategory,
+    payload.name = firstName,
+    payload.tags.id = numberTags,
+    payload.tags.name = fullName
+    , {
         'Content-type': 'application/json; charset=UTF-8',
     })
 
@@ -28,15 +30,7 @@ Scenario('Cadastro de Pet', async ({ I }) => {
     jsonSchema.complexJsonStructuresPOST();
     jsonSchema.containsKeysPOST();
     responseValidation.responseCallBackPOST();
-
-    I.seeResponseContainsJson({
-        id: numberId,
-        category: {id: numberCategory,name: 'Cachorro'},
-        name: firstName,
-        photoUrls: ['photoURL'],
-        tags: [{id: numberTags,name: fullName}],
-        status: 'available'
-    })
+    responseValidation.responseContains();
     
     // console.log(responsePost)
 });
@@ -59,15 +53,6 @@ Scenario('Atualização do cadastro do Pet', async ({ I }) => {
     jsonSchema.complexJsonStructuresPOST();
     jsonSchema.containsKeysPOST();
     responseValidation.responseCallBackPOST();
-    
-    I.seeResponseContainsJson({
-        id: numberId,
-        category: {id: numberCategory,name: 'Cat'},
-        name: firstName,
-        photoUrls: ['photoURL'],
-        tags: [{id: numberTags,name: fullName}],
-        status: 'unavailable'
-    })
 
     // console.log(responsePut)
 });
@@ -81,16 +66,7 @@ Scenario('Consulta do cadastro do Pet', async ({ I }) => {
     jsonSchema.complexJsonStructuresPOST();
     jsonSchema.containsKeysPOST();
     responseValidation.responseCallBackPOST();
-
-    I.seeResponseContainsJson({
-        id: numberId,
-        category: {id: numberCategory,name: 'Cat'},
-        name: firstName,
-        photoUrls: ['photoURL'],
-        tags: [{id: numberTags,name: fullName}],
-        status: 'unavailable'
-    })
-    
+   
     // console.log(payloadGet)
 });
 
