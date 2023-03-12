@@ -24,19 +24,16 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
-    tryTo: {
-      enabled: true
-    },
     retryFailedStep: {
-      enabled: false
-    },
-    retryTo: {
       enabled: true
     },
-    eachElement: {
-      enabled: true
+    allure: {
+      enabled: true,
+      require: '@codeceptjs/allure-legacy',
     },
-    pauseOnFail: {}
+    stepByStepReport: {
+      enabled: true
+    }
   },
   stepTimeout: 0,
   stepTimeoutOverride: [{

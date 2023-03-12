@@ -44,3 +44,7 @@ npx codeceptjs run
 ## Configuração de informações randômicas via NPM
 npm install node-random-name
 npm install random-number
+
+## Relatorio Allure
+npm install @codeceptjs/allure-legacy --save-dev
+npx allure serve output
