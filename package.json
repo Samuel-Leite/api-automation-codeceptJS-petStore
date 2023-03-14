@@ -4,7 +4,7 @@
   "description": "automacao api com codeceptJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api": "npx codeceptjs run ./test/pet_store_test.js"
   },
   "author": "",
   "license": "ISC",
