@@ -4,7 +4,8 @@
   "description": "automacao api com codeceptJS",
   "main": "index.js",
   "scripts": {
-    "api": "npx codeceptjs run ./test/pet_store_test.js"
+    "api": "npx codeceptjs run ./test/pet_store_test.js",
+    "apiBdd": "npx codeceptjs run --features"
   },
   "author": "",
   "license": "ISC",
