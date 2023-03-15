@@ -12,7 +12,7 @@ const numberTags = number.getNumberTags()
 
 const payload = require('../resource/data/payload.json')
 
-Scenario('Cadastro de Pet', async ({ I }) => {
+Scenario('Registers the Pet', async ({ I }) => {
   const responsePost = await I.sendPostRequest(
     `/v2/pet`,
     payload,
@@ -37,7 +37,7 @@ Scenario('Cadastro de Pet', async ({ I }) => {
   // console.log(responsePost)
 })
 
-Scenario('Atualização do cadastro do Pet', async ({ I }) => {
+Scenario('Updates the Pets registration', async ({ I }) => {
   const responsePut = await I.sendPutRequest(
     `/v2/pet`,
     {
@@ -63,7 +63,7 @@ Scenario('Atualização do cadastro do Pet', async ({ I }) => {
   // console.log(responsePut)
 })
 
-Scenario('Consulta do cadastro do Pet', async ({ I }) => {
+Scenario('Pet registration consultation', async ({ I }) => {
   const payloadGet = await I.sendGetRequest(`/v2/pet/` + numberId)
 
   responseValidation.validationStatus(200)
@@ -76,7 +76,7 @@ Scenario('Consulta do cadastro do Pet', async ({ I }) => {
   // console.log(payloadGet)
 })
 
-Scenario('Exclusão do cadastro do Pet', async ({ I }) => {
+Scenario('Deletion of the Pets registration', async ({ I }) => {
   const payloadDelete = await I.sendDeleteRequest(`/v2/pet/` + numberId)
 
   responseValidation.validationStatus(200)

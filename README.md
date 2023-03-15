@@ -56,3 +56,8 @@ npm install random-number
 
 npm install @codeceptjs/allure-legacy --save-dev
 npx allure serve output
+
+## Instalação do eslint
+
+npm install eslint -D
+npx eslint --init
