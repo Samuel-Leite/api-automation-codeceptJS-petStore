@@ -29,14 +29,15 @@ exports.config = {
     },
     allure: {
       enabled: true,
-      require: '@codeceptjs/allure-legacy',
+      require: '@codeceptjs/allure-legacy'
     },
     stepByStepReport: {
       enabled: true
     }
   },
   stepTimeout: 0,
-  stepTimeoutOverride: [{
+  stepTimeoutOverride: [
+    {
       pattern: 'wait.*',
       timeout: 0
     },
