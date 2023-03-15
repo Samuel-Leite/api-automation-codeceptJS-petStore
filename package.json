@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
-    "codeceptjs": "^3.4.1"
+    "codeceptjs": "^3.4.1",
+    "eslint": "^8.36.0"
   },
   "dependencies": {
     "node-random-name": "^1.0.1",
