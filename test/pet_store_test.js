@@ -1,6 +1,6 @@
 Feature('Sistema de cadastro da Pet Store')
 
-const { responseValidation, jsonSchema } = inject()
+const { responseValidation, jsonSchema, qaConfig } = inject()
 const name = require('../Utils/name')
 const number = require('../Utils/number')
 
@@ -10,17 +10,15 @@ const numberId = number.getNumberId()
 const numberCategory = number.getNumberCategory()
 const numberTags = number.getNumberTags()
 
-const payload = require('../resource/data/payload.json')
-
 Scenario('Registers the Pet', async ({ I }) => {
   const responsePost = await I.sendPostRequest(
     `/v2/pet`,
-    payload,
-    (payload.id = numberId),
-    (payload.category.id = numberCategory),
-    (payload.name = firstName),
-    (payload.tags.id = numberTags),
-    (payload.tags.name = fullName),
+    qaConfig.petStore.payload,
+    (qaConfig.petStore.payload.id = numberId),
+    (qaConfig.petStore.payload.category.id = numberCategory),
+    (qaConfig.petStore.payload.name = firstName),
+    (qaConfig.petStore.payload.tags.id = numberTags),
+    (qaConfig.petStore.payload.tags.name = fullName),
     {
       'Content-type': 'application/json; charset=UTF-8'
     }

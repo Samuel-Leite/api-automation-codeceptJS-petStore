@@ -1,5 +1,4 @@
-const { I } = inject()
-const payload = require('../data/payload.json')
+const { I, qaConfig } = inject()
 
 module.exports = {
   validationStatus(statusCode) {
@@ -46,6 +45,6 @@ module.exports = {
   },
 
   responseContains() {
-    I.seeResponseContainsJson(payload)
+    I.seeResponseContainsJson(qaConfig.petStore.payload)
   }
 }

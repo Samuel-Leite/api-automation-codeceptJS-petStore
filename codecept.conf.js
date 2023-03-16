@@ -9,7 +9,8 @@ exports.config = {
   include: {
     I: './steps_file.js',
     responseValidation: './resource/api/responseValidation.js',
-    jsonSchema: './resource/api/jsonSchema.js'
+    jsonSchema: './resource/api/jsonSchema.js',
+    qaConfig: './configs/qa.js'
   },
   mocha: {},
   bootstrap: null,
