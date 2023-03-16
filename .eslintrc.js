@@ -16,11 +16,6 @@ module.exports = {
     'no-unused-expressions': 'off',
     'import/extensions': 'off',
     'default-param-last': 'off',
-    'func-names': 'off',
-
-    semi: ['error', 'always'],
-    quotes: ['error', 'single'],
-    indent: ['error', 4],
-    'comma-spacing': ['error', { before: false, after: true }]
+    'func-names': 'off'
   }
 }

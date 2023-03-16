@@ -57,7 +57,9 @@ npm install random-number
 npm install @codeceptjs/allure-legacy --save-dev
 npx allure serve output
 
-## Instalação do eslint
+## Instalação do prettier e eslint
 
+npm install prettier
 npm install eslint -D
-npx eslint --init
+npm init @eslint/config
+npm install eslint-config-airbnb-base
