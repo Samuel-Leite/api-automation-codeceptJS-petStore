@@ -2,8 +2,8 @@
 Feature('Sistema de cadastro da Pet Store')
 
 const { responseValidation, jsonSchema, qaConfig } = inject()
-const name = require('../Utils/name')
-const number = require('../Utils/number')
+const name = require('../Utils/randomName')
+const number = require('../Utils/randomNumber')
 
 const firstName = name.getFirstName()
 const fullName = name.getFullName()

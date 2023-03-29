@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const { I, qaConfig } = inject()
-const name = require('../Utils/name')
-const number = require('../Utils/number')
+const name = require('../Utils/randomName')
+const number = require('../Utils/randomNumber')
 
 const firstName = name.getFirstName()
 const fullName = name.getFullName()

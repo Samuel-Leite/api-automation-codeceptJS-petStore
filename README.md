@@ -69,8 +69,9 @@ npm install --save-dev lint-staged
 
 ## Instalação do Husky
 
-npm install husky
-npx husky-init
+npm install husky --save-dev
+npm install -g git-cz
+npm install commitizen -g --force
+npm install --save-dev git-cz
 
-npm install -D husky@4
-npm install -D husky
+Obs.: Copiar a pasta .husky, changelog.config.js e adicionar comandos na pasta package.json
