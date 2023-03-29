@@ -1,6 +1,6 @@
 /// <reference types='codeceptjs' />
 type steps_file = typeof import('./steps_file.js');
-type validation_api = typeof import('./resource/api/responseValidation.js');
+type validation_api = typeof import('./src/resource/responseValidation.js');
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any, validation_api: validation_api }

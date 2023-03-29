@@ -8,9 +8,9 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    responseValidation: './resource/api/responseValidation.js',
-    jsonSchema: './resource/api/jsonSchema.js',
-    qaConfig: './configs/qa.js'
+    responseValidation: './src/resource/responseValidation.js',
+    jsonSchema: './src/resource/jsonSchema.js',
+    qaConfig: './src/configs/qa.js'
   },
   mocha: {},
   bootstrap: null,
@@ -18,8 +18,8 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/petStore.feature',
-    steps: ['./step_definitions/petStore_steps.js']
+    features: './src/features/petStore.feature',
+    steps: ['./src/step_definitions/petStore_steps.js']
   },
   plugins: {
     screenshotOnFail: {

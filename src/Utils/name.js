@@ -1,11 +1,11 @@
-var random_name = require('node-random-name')
+const randomName = require('node-random-name')
 
 const getFirstName = () => {
-  return random_name({ first: true })
+  return randomName({ first: true })
 }
 
 const getFullName = () => {
-  return random_name({ random: Math.random })
+  return randomName({ random: Math.random })
 }
 
 exports.getFirstName = getFirstName

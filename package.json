@@ -4,15 +4,29 @@
   "description": "automacao api com codeceptJS",
   "main": "index.js",
   "scripts": {
-    "api": "npx codeceptjs run ./test/pet_store_test.js",
-    "apiBdd": "npx codeceptjs run --features"
+    "prepare": "husky install",
+    "precommit": "git add . ",
+    "commit": "git cz && node .husky/push.js",
+    "api": "npx codeceptjs run ./src/test/pet_store_test.js",
+    "apiBdd": "npx codeceptjs run --features",
+    "lint": "eslint src --max-warnings=0"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npx lint --fix"
+    ]
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
     "codeceptjs": "^3.4.1",
-    "eslint": "^8.36.0"
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "git-cz": "^4.9.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.2.0"
   },
   "dependencies": {
     "eslint-config-airbnb-base": "^15.0.0",

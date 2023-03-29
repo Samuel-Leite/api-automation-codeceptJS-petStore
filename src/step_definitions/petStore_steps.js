@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { I, qaConfig } = inject()
 const name = require('../Utils/name')
 const number = require('../Utils/number')
@@ -22,7 +23,7 @@ Given('that the user registers the Pet', async () => {
     }
   )
 
-  // console.log(responsePost)
+  console.log(responsePost)
 })
 
 When('the user updates the Pets registration', async () => {
@@ -41,17 +42,17 @@ When('the user updates the Pets registration', async () => {
     }
   )
 
-  // console.log(responsePut)
+  console.log(responsePut)
 })
 
 When('the user deletes the Pets record', async () => {
-  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/` + numberId)
+  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/ ${numberId}`)
 
-  // console.log(payloadDelete)
+  console.log(payloadDelete)
 })
 
 Then('the pet query will reflect', async () => {
-  const payloadGet = await I.sendGetRequest(`/v2/pet/` + numberId)
+  const payloadGet = await I.sendGetRequest(`/v2/pet/ ${numberId}`)
 
-  // console.log(payloadGet)
+  console.log(payloadGet)
 })
