@@ -1,8 +1,9 @@
+// eslint-disable-next-line no-undef
 const { I, qaConfig } = inject()
 
 module.exports = {
   validationStatus(statusCode) {
-    if (statusCode != 200) {
+    if (statusCode !== 200) {
       I.seeResponseCodeIs(404)
     }
   },

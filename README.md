@@ -63,3 +63,14 @@ npm install prettier
 npm install eslint -D
 npm init @eslint/config
 npm install eslint-config-airbnb-base
+npm install --save-dev eslint-plugin-prettier
+npm install --save-dev eslint-plugin-prettier eslint-config-prettier
+npm install --save-dev lint-staged
+
+## Instalação do Husky
+
+npm install husky
+npx husky-init
+
+npm install -D husky@4
+npm install -D husky
