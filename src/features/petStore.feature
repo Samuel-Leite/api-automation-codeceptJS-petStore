@@ -1,7 +1,7 @@
 Feature: Pet Store system
   I'd like as a pet store owner
   I'd like to register, update, consult and delete Pet
-  I'd like the result to be saved in the database
+  I'd like the result to be saved in the database.
 
   Background: Registers the Pet
     Given that the user registers the Pet
