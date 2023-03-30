@@ -67,6 +67,16 @@ npm install --save-dev eslint-plugin-prettier
 npm install --save-dev eslint-plugin-prettier eslint-config-prettier
 npm install --save-dev lint-staged
 
+OBS.: Após executar os comandos acima, copiar as pastas: .eslintignore, .eslintrc.js, .prettierignore, .prettierrc e adicionar comandos na pasta package.json:
+"scripts": {
+"lint": "eslint src --max-warnings=0"
+},
+"lint-staged": {
+"src/\*_/_": [
+"npx lint --fix"
+]
+},
+
 ## Instalação do Husky
 
 npm install husky --save-dev
@@ -74,4 +84,9 @@ npm install -g git-cz
 npm install commitizen -g --force
 npm install --save-dev git-cz
 
-Obs.: Copiar a pasta .husky, changelog.config.js e adicionar comandos na pasta package.json
+OBS.: Copiar as pastas: .husky, changelog.config.js e adicionar comandos na pasta package.json:
+"scripts": {
+"prepare": "husky install",
+"precommit": "git add . ",
+"commit": "git cz && node .husky/push.js",
+},
