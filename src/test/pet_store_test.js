@@ -29,7 +29,7 @@ Scenario('Registers the Pet', async ({ I }) => {
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(500)
   responseValidation.validateTimeout(1000)
-  jsonSchema.complexJsonStructures()
+  jsonSchema.complexJsonStructures(200)
   jsonSchema.containsKeysPOST()
   responseValidation.responseCallBackPOST()
   responseValidation.responseContains()
@@ -57,7 +57,7 @@ Scenario('Updates the Pets registration', async ({ I }) => {
   responseValidation.validationSuccessfulStatus()
   responseValidation.dontSeeCode(422)
   responseValidation.validateTimeout(1000)
-  jsonSchema.complexJsonStructures()
+  jsonSchema.complexJsonStructures(200)
   jsonSchema.containsKeysPOST()
   responseValidation.responseCallBackPOST()
 
@@ -65,25 +65,27 @@ Scenario('Updates the Pets registration', async ({ I }) => {
 })
 
 Scenario('Pet registration consultation', async ({ I }) => {
-  const payloadGet = await I.sendGetRequest(`/v2/pet/${numberId}`)
+  // const payloadGet = await
+  I.sendGetRequest(`/v2/pet/${numberId}`)
 
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(422)
   responseValidation.validateTimeout(1000)
-  // jsonSchema.complexJsonStructuresPOST()
+  jsonSchema.complexJsonStructures(200)
   // jsonSchema.containsKeysPOST()
   // responseValidation.responseCallBackPOST()
 
-  console.log(payloadGet)
+  // console.log(payloadGet)
 })
 
 Scenario('Deletion of the Pets registration', async ({ I }) => {
-  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/${numberId}`)
+  // const payloadDelete = await
+  I.sendDeleteRequest(`/v2/pet/${numberId}`)
 
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(500)
   responseValidation.validateTimeout(1000)
-  // jsonSchema.complexJsonStructuresDELETE()
+  jsonSchema.complexJsonStructures()
   // jsonSchema.containsKeysDELETE()
   // responseValidation.responseCallBackDELETE()
 
@@ -93,5 +95,19 @@ Scenario('Deletion of the Pets registration', async ({ I }) => {
   //   message: numberId.toString()
   // })
 
-  console.log(payloadDelete)
+  // console.log(payloadDelete)
+})
+
+Scenario('Pet registration consultation 2', async ({ I }) => {
+  // const payloadGet = await
+  I.sendGetRequest(`/v2/pet/${numberId}`)
+
+  responseValidation.validationStatus(404)
+  responseValidation.dontSeeCode(422)
+  responseValidation.validateTimeout(1000)
+  jsonSchema.complexJsonStructures()
+  // jsonSchema.containsKeysPOST()
+  // responseValidation.responseCallBackPOST()
+
+  // console.log(payloadGet)
 })

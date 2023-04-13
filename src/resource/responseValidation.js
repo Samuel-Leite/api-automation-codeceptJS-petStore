@@ -3,9 +3,7 @@ const { I, qaConfig } = inject()
 
 module.exports = {
   validationStatus(statusCode) {
-    if (statusCode !== 200) {
-      I.seeResponseCodeIs(404)
-    }
+    I.seeResponseCodeIs(statusCode)
   },
 
   validationSuccessfulStatus() {
