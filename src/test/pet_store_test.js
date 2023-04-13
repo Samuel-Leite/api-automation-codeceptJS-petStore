@@ -12,7 +12,8 @@ const numberCategory = number.getNumberCategory()
 const numberTags = number.getNumberTags()
 
 Scenario('Registers the Pet', async ({ I }) => {
-  const responsePost = await I.sendPostRequest(
+  // const responsePost = await
+  I.sendPostRequest(
     `/v2/pet`,
     qaConfig.petStore.payload,
     (qaConfig.petStore.payload.id = numberId),
@@ -28,16 +29,17 @@ Scenario('Registers the Pet', async ({ I }) => {
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(500)
   responseValidation.validateTimeout(1000)
-  jsonSchema.complexJsonStructuresPOST()
+  jsonSchema.complexJsonStructures()
   jsonSchema.containsKeysPOST()
   responseValidation.responseCallBackPOST()
   responseValidation.responseContains()
 
-  console.log(responsePost)
+  // console.log(responsePost)
 })
 
 Scenario('Updates the Pets registration', async ({ I }) => {
-  const responsePut = await I.sendPutRequest(
+  // const responsePut = await
+  I.sendPutRequest(
     `/v2/pet`,
     {
       id: numberId,
@@ -55,16 +57,15 @@ Scenario('Updates the Pets registration', async ({ I }) => {
   responseValidation.validationSuccessfulStatus()
   responseValidation.dontSeeCode(422)
   responseValidation.validateTimeout(1000)
-  jsonSchema.complexJsonStructuresPOST()
+  jsonSchema.complexJsonStructures()
   jsonSchema.containsKeysPOST()
   responseValidation.responseCallBackPOST()
 
-  console.log(responsePut)
+  // console.log(responsePut)
 })
 
 Scenario('Pet registration consultation', async ({ I }) => {
-  // const payloadGet = await
-  I.sendGetRequest(`/v2/pet/ ${numberId}`)
+  const payloadGet = await I.sendGetRequest(`/v2/pet/${numberId}`)
 
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(422)
@@ -73,12 +74,11 @@ Scenario('Pet registration consultation', async ({ I }) => {
   // jsonSchema.containsKeysPOST()
   // responseValidation.responseCallBackPOST()
 
-  // console.log(payloadGet)
+  console.log(payloadGet)
 })
 
 Scenario('Deletion of the Pets registration', async ({ I }) => {
-  // const payloadDelete = await
-  I.sendDeleteRequest(`/v2/pet/ ${numberId}`)
+  const payloadDelete = await I.sendDeleteRequest(`/v2/pet/${numberId}`)
 
   responseValidation.validationStatus(200)
   responseValidation.dontSeeCode(500)
@@ -93,5 +93,5 @@ Scenario('Deletion of the Pets registration', async ({ I }) => {
   //   message: numberId.toString()
   // })
 
-  // console.log(payloadDelete)
+  console.log(payloadDelete)
 })

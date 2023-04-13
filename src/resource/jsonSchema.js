@@ -2,7 +2,7 @@
 const { I } = inject()
 
 module.exports = {
-  complexJsonStructuresPOST() {
+  complexJsonStructures() {
     I.seeResponseMatchesJsonSchema((joi) => {
       return joi.object({
         id: joi.number().integer().min(1).max(999).required(),
